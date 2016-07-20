@@ -47,7 +47,7 @@
 
 - name: install distro or red hat storage ceph mon
   yum:
-    name: "ceph-mon"
+    name: "{{ redhat_ceph-mon_package }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - mon_group_name in group_names
@@ -59,7 +59,7 @@
 
 - name: install distro or red hat storage ceph mon
   dnf:
-    name: "ceph-mon"
+    name: "{{ redhat_ceph-mon_package }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - mon_group_name in group_names
@@ -71,7 +71,7 @@
 
 - name: install distro or red hat storage ceph osd
   yum:
-    name: "ceph-osd"
+    name: "{{ redhat_ceph-osd_package }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - osd_group_name in group_names
@@ -83,7 +83,7 @@
 
 - name: install distro or red hat storage ceph osd
   dnf:
-    name: "ceph-osd"
+    name: "{{ redhat_ceph-osd_package }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - osd_group_name in group_names
@@ -95,7 +95,7 @@
 
 - name: install distro or red hat storage ceph mds
   yum:
-    name: "ceph-mds"
+    name: "{{ redhat_ceph-mds_package }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - mds_group_name in group_names
@@ -107,7 +107,7 @@
 
 - name: install distro or red hat storage ceph mds
   dnf:
-    name: "ceph-mds"
+    name: "{{ redhat_ceph-mds_package }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - mds_group_name in group_names
