@@ -29,6 +29,7 @@ host = {{ hostvars[host]['ansible_fqdn'] }}
 [mon.{{ hostvars[host]['ansible_hostname'] }}]
 host = {{ hostvars[host]['ansible_hostname'] }}
 {% else %}
+[mon.{{ host }}]
 host = {{ host }}
 {% endif %}
 # we need to check if monitor_interface is defined in the inventory per host or if it's set in a group_vars file
