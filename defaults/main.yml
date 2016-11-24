@@ -57,6 +57,10 @@ redhat_package_dependencies:
   - ntp
   - python-setuptools
 
+redhat_ceph_mon_package: "ceph-mon"
+redhat_ceph_osd_package: "ceph-osd"
+redhat_ceph_mds_package: "ceph-mds"
+
 # Enable the ntp service by default to avoid clock skew on
 # ceph nodes
 ntp_service_enabled: true
