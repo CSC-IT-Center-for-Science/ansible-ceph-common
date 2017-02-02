@@ -25,6 +25,8 @@ mon initial members = {% for host in groups[mon_group_name] %}
         {{ hostvars[host]['ansible_fqdn'] }}
       {%- elif hostvars[host]['ansible_hostname'] is defined -%}
         {{ hostvars[host]['ansible_hostname'] }}
+      {%- else -%}
+        {{ hostvars[host]['inventory_hostname'] }}
       {%- endif %}
       {%- if not loop.last %},{% endif %}
     {% endfor %}
