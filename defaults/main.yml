@@ -185,6 +185,11 @@ ceph_dev_sha1: latest # distinct sha1 to use, defaults to 'latest' (as in latest
 ceph_custom: false # use custom ceph repository
 ceph_custom_repo: https://server.domain.com/ceph-custom-repo
 
+ceph_mon_package_name: "ceph-mon"
+ceph_osd_package_name: "ceph-osd"
+ceph_mds_package_name: "ceph-mds"
+ceph_fuse_package_name: "ceph-fuse"
+ceph_base_package_name: "ceph-base"
 
 ######################
 # CEPH CONFIGURATION #

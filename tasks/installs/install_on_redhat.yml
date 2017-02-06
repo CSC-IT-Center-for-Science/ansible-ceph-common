@@ -79,7 +79,7 @@
 
 - name: install distro or red hat storage ceph mon
   package:
-    name: "ceph-mon"
+    name: "{{ ceph_mon_package_name }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - mon_group_name in group_names
@@ -89,7 +89,7 @@
 
 - name: install distro or red hat storage ceph osd
   package:
-    name: "ceph-osd"
+    name: "{{ ceph_osd_package_name }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - osd_group_name in group_names
@@ -99,7 +99,7 @@
 
 - name: install distro or red hat storage ceph mds
   package:
-    name: "ceph-mds"
+    name: "{{ ceph_mds_package_name }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - mds_group_name in group_names
@@ -109,7 +109,7 @@
 
 - name: install distro or red hat storage ceph-fuse
   package:
-    name: "ceph-fuse"
+    name: "{{ ceph_fuse_package_name }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - client_group_name in group_names
@@ -120,7 +120,7 @@
 
 - name: install distro or red hat storage ceph base
   package:
-    name: "ceph-base"
+    name: "{{ ceph_base_package_name }}"
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when:
     - client_group_name in group_names
