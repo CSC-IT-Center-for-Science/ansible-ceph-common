@@ -25,8 +25,7 @@ Have a look at `defaults/main.yml`.
 * Install source, choose one of these:
   * `ceph_stable`
   * `ceph_dev`
-  * `ceph_stable_ice`
-  * `ceph_stable_rh_storage`
+  * `ceph_rhcs`
   * `ceph_custom`
 * `journal_size`
 * `monitor_interface`
@@ -41,7 +40,8 @@ Have a look at `defaults/main.yml`.
 * restart ceph-mds
 * restart ceph-rgw
 * restart ceph-restapi
-* restart apache2
+
+
 
 # Dependencies
 
